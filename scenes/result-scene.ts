@@ -11,12 +11,7 @@ export default class ResultScene extends Phaser.Scene {
     this.resTime = resTime.resTime;
   }
 
-  preload(): void {
-    this.load.image(
-      'background',
-      'https://raw.githubusercontent.com/ellen7788/HappyNewYear2023/main/assets/background.jpg',
-    );
-  }
+  preload(): void {}
 
   /**ロードが終わったあとのライフサイクルで呼ばれるメソッド */
   create(): void {

@@ -8,7 +8,7 @@ export default class TitleScene extends Phaser.Scene {
   preload(): void {
     this.load.image(
       'background',
-      'https://raw.githubusercontent.com/ellen7788/HappyNewYear2023/main/assets/background.jpg',
+      'https://github.com/ellen7788/HappyNewYear2023/blob/main/assets/background.jpg?raw=true',
     );
   }
 
