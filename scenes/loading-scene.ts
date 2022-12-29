@@ -19,7 +19,7 @@ export default class LoadingScene extends Phaser.Scene {
     //ファイルのロードをしていく
     this.load.image(
       'acorn',
-      'https://github.com/ellen7788/HappyNewYear2023/blob/main/assets/picture.png?raw=true',
+      'https://raw.githubusercontent.com/ellen7788/HappyNewYear2023/main/assets/picture.png',
     );
     //疑似的に大量のアセットをロードするかのような動きをさせてる
     // for (let index = 0; index < 100; index++) {
