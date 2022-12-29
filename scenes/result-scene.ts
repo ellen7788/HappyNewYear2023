@@ -43,12 +43,18 @@ export default class ResultScene extends Phaser.Scene {
       .setFill('white')
       .setInteractive()
       .on('pointerdown', () => {
-        window.open(
-          'https://twitter.com/intent/tweet?text=環境ポケモンかるたを' +
-            (this.resTime / 1000).toString() +
-            '秒でクリアしました！&url=https://ellen7788.github.io/HappyNewYear2023/',
-          '_blank',
-        );
+        const message =
+          '環境ポケモンかるたを' +
+          (this.resTime / 1000).toString() +
+          '秒でクリアしました！';
+        const url =
+          'https://twitter.com/intent/tweet?text=' +
+          encodeURIComponent(message) +
+          '&url=https://ellen7788.github.io/HappyNewYear2023/';
+        const res = window.open(url, '_blank');
+
+        if (res && res.focus) res.focus();
+        else if (!res) window.location.href = url;
       });
 
     this.add
