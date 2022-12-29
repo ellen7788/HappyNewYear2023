@@ -6,8 +6,8 @@ import Scenes from './scenes/scenes';
 //コンフィグ
 const config: Phaser.Types.Core.GameConfig = {
   //画面サイズ
-  width: 640,
-  height: 360,
+  width: 1280,
+  height: 720,
   type: Phaser.AUTO,
   //ゲーム画面を描画するcanvasを書き出す先
   parent: 'game',

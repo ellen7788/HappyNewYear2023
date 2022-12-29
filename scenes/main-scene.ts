@@ -107,15 +107,15 @@ export default class MainScene extends Phaser.Scene {
     this.add
       .image(width / 2, height / 2, 'background')
       .setOrigin(0.5, 0.5)
-      .setScale(0.54);
+      .setScale(1.07);
 
     const correctText = this.add
-      .text(width / 2, height / 2, '正解！')
-      .setFontSize(24)
+      .text(0, 0, '正解！')
+      .setFontSize(48)
       .setOrigin(0.5, 0.5)
       .setFill('red')
-      .setStroke('white', 4)
-      .setPadding(8)
+      .setStroke('white', 8)
+      .setPadding(16)
       .setVisible(false)
       .setDepth(1);
     // const correctTextFade = this.tweens.create({
@@ -131,26 +131,27 @@ export default class MainScene extends Phaser.Scene {
     // });
 
     const textBox = this.add
-      .rectangle(4, height - 56 - 4, width - 8, 56, 0xffffff)
+      .rectangle(8, height - 112 - 8, width - 16, 112, 0xffffff)
       .setOrigin(0, 0)
-      .setStrokeStyle(1, 0x000000)
+      .setStrokeStyle(2, 0x000000)
       .setDepth(1);
     this.descriptionText = this.add
-      .text(4, height - 56 - 4, '')
+      .text(8, height - 112 - 8, '')
       .setFill('black')
-      .setFontSize(24)
-      .setPadding(4)
+      .setFontSize(48)
+      .setPadding(8)
       .setDepth(1);
     this.setDescription(
       this.questionShuffleKarutas[nowQuestionIndex].description,
     );
 
     this.cardShuffleKarutas.map((karuta, index) => {
-      const x = 80 + (index % 5) * 120;
-      const y = 100 + Math.floor(index / 5) * 140;
+      const x = 160 + (index % 5) * 240;
+      const y = 200 + Math.floor(index / 5) * 280;
       const karutaImage = this.add
         .image(x, y, karuta.id)
         .setOrigin(0.5, 0.5)
+        .setScale(2.0)
         .setAngle(Math.random() * 360)
         .setInteractive()
         .on('pointerdown', () => {
@@ -182,11 +183,11 @@ export default class MainScene extends Phaser.Scene {
               .setText('不正解…')
               .setFill('blue');
             const penaltyText = this.add
-              .text(width, 24, '+5.000')
+              .text(width, 48, '+5.000')
               .setOrigin(1, 0)
               .setStroke('blue', 3)
-              .setFontSize(24)
-              .setPadding(4)
+              .setFontSize(48)
+              .setPadding(8)
               .setFill('skyblue');
             const penaltyTweens = this.tweens.add({
               targets: penaltyText,
@@ -207,8 +208,8 @@ export default class MainScene extends Phaser.Scene {
       .text(10, 10, '←タイトルに戻る')
       .setBackgroundColor('green')
       .setStroke('gray', 1)
-      .setFontSize(12)
-      .setPadding(4)
+      .setFontSize(36)
+      .setPadding(8)
       .setFill('white')
       .setInteractive()
       .on('pointerdown', () => {
@@ -219,9 +220,9 @@ export default class MainScene extends Phaser.Scene {
       .text(width, 0, '000.000')
       .setBackgroundColor('pink')
       .setOrigin(1, 0)
-      .setStroke('gray', 1)
-      .setFontSize(24)
-      .setPadding(4)
+      .setStroke('gray', 2)
+      .setFontSize(48)
+      .setPadding(8)
       .setFill('gray');
 
     this.startTime = new Date();
