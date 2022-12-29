@@ -47,6 +47,7 @@ export default class ResultScene extends Phaser.Scene {
           'https://twitter.com/intent/tweet?text=環境ポケモンかるたを' +
             (this.resTime / 1000).toString() +
             '秒でクリアしました！&url=https://ellen7788.github.io/HappyNewYear2023/',
+          '_blank',
         );
       });
 
