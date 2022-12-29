@@ -6,7 +6,10 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   preload(): void {
-    this.load.image('background', '../assets/background.jpg');
+    this.load.image(
+      'background',
+      'https://raw.githubusercontent.com/ellen7788/HappyNewYear2023/main/assets/background.jpg',
+    );
   }
 
   /**ロードが終わったあとのライフサイクルで呼ばれるメソッド */

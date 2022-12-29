@@ -86,7 +86,12 @@ export default class MainScene extends Phaser.Scene {
 
   preload(): void {
     this.karutas.map((karuta) => {
-      this.load.image(karuta.id, '../assets/Karutas/' + karuta.id + '.jpg');
+      this.load.image(
+        karuta.id,
+        'https://raw.githubusercontent.com/ellen7788/HappyNewYear2023/main/assets/Karutas/' +
+          karuta.id +
+          '.jpg',
+      );
     });
   }
 

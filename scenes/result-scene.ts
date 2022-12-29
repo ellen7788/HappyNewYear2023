@@ -12,7 +12,10 @@ export default class ResultScene extends Phaser.Scene {
   }
 
   preload(): void {
-    this.load.image('background', '../assets/background.jpg');
+    this.load.image(
+      'background',
+      'https://raw.githubusercontent.com/ellen7788/HappyNewYear2023/main/assets/background.jpg',
+    );
   }
 
   /**ロードが終わったあとのライフサイクルで呼ばれるメソッド */
@@ -48,7 +51,7 @@ export default class ResultScene extends Phaser.Scene {
         window.open(
           'https://twitter.com/intent/tweet?text=環境ポケモンかるたを' +
             (this.resTime / 1000).toString() +
-            '秒でクリアしました！&url=',
+            '秒でクリアしました！&url=https://ellen7788.github.io/HappyNewYear2023/',
         );
       });
 
