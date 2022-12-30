@@ -12,7 +12,6 @@ export default class TitleScene extends Phaser.Scene {
     );
   }
 
-  /**ロードが終わったあとのライフサイクルで呼ばれるメソッド */
   create(): void {
     const { width, height } = this.sys.game.canvas;
 
@@ -23,6 +22,7 @@ export default class TitleScene extends Phaser.Scene {
 
     const titleText = this.add
       .text(width / 2, height / 2, '環境ポケモンかるた')
+      .setFontFamily('HG行書体')
       .setOrigin(0.5, 0.5)
       .setStroke('red', 8)
       .setFontSize(88)
@@ -30,18 +30,30 @@ export default class TitleScene extends Phaser.Scene {
       .setFill('white');
     const startText = this.add
       .text(width / 2, height / 2 + 120, 'スタート')
+      .setFontFamily('HG行書体')
       .setBackgroundColor('green')
       .setOrigin(0.5, 0.5)
       .setStroke('gray', 1)
       .setFontSize(40)
       .setPadding(8)
-      .setFill('white');
-    //setInteractiveを呼ぶと動的なオブジェクトになる
-    //入力系のイベントなどが有効化される
-    startText.setInteractive();
+      .setFill('white')
+      .setInteractive()
+      .on('pointerdown', () => {
+        this.scene.start('Main');
+      });
 
-    startText.on('pointerdown', () => {
-      this.scene.start('Main');
-    });
+    const ruleText = this.add
+      .text(width / 2, height / 2 + 220, 'ルール説明')
+      .setFontFamily('HG行書体')
+      .setBackgroundColor('pink')
+      .setOrigin(0.5, 0.5)
+      .setStroke('gray', 1)
+      .setFontSize(40)
+      .setPadding(8)
+      .setFill('gray')
+      .setInteractive()
+      .on('pointerdown', () => {
+        this.scene.start('Rule');
+      });
   }
 }

@@ -13,7 +13,6 @@ export default class ResultScene extends Phaser.Scene {
 
   preload(): void {}
 
-  /**ロードが終わったあとのライフサイクルで呼ばれるメソッド */
   create(): void {
     const { width, height } = this.sys.game.canvas;
 
@@ -22,12 +21,26 @@ export default class ResultScene extends Phaser.Scene {
       .setOrigin(0.5, 0.5)
       .setScale(1.07);
 
+    const akeomeText = this.add
+      .text(
+        width / 2,
+        height / 2 - 160,
+        'あけましておめでとうございます\n　今年もよろしくお願いします',
+      )
+      .setFontFamily('游明朝')
+      .setOrigin(0.5, 0.5)
+      .setStroke('white', 4)
+      .setFontSize(40)
+      .setPadding(16)
+      .setFill('black');
+
     const titleText = this.add
       .text(
         width / 2,
         height / 2,
         'あなたの結果は' + (this.resTime / 1000).toString() + '秒です！',
       )
+      .setFontFamily('HG行書体')
       .setOrigin(0.5, 0.5)
       .setStroke('red', 8)
       .setFontSize(80)
@@ -36,6 +49,7 @@ export default class ResultScene extends Phaser.Scene {
 
     const startText = this.add
       .text(width / 2, height / 2 + 120, '結果をツイート')
+      .setFontFamily('HG行書体')
       .setBackgroundColor('#1da1f2')
       .setOrigin(0.5, 0.5)
       .setFontSize(48)
@@ -61,6 +75,7 @@ export default class ResultScene extends Phaser.Scene {
 
     this.add
       .text(width / 2, height / 2 + 240, 'タイトルに戻る')
+      .setFontFamily('HG行書体')
       .setBackgroundColor('green')
       .setOrigin(0.5, 0.5)
       .setStroke('gray', 2)

@@ -111,6 +111,7 @@ export default class MainScene extends Phaser.Scene {
 
     const correctText = this.add
       .text(0, 0, '正解！')
+      .setFontFamily('HG行書体')
       .setFontSize(48)
       .setOrigin(0.5, 0.5)
       .setFill('red')
@@ -136,7 +137,8 @@ export default class MainScene extends Phaser.Scene {
       .setStrokeStyle(2, 0x000000)
       .setDepth(1);
     this.descriptionText = this.add
-      .text(8, height - 112 - 8, '')
+      .text(8, height - 112 - 16, '')
+      .setFontFamily('HG行書体')
       .setFill('black')
       .setFontSize(48)
       .setPadding(8)
@@ -184,6 +186,7 @@ export default class MainScene extends Phaser.Scene {
               .setFill('blue');
             const penaltyText = this.add
               .text(width, 48, '+5.000')
+              .setFontFamily('HG行書体')
               .setOrigin(1, 0)
               .setStroke('blue', 3)
               .setFontSize(48)
@@ -206,6 +209,7 @@ export default class MainScene extends Phaser.Scene {
 
     this.add
       .text(10, 10, '←タイトルに戻る')
+      .setFontFamily('HG行書体')
       .setBackgroundColor('green')
       .setStroke('gray', 1)
       .setFontSize(36)
@@ -218,6 +222,7 @@ export default class MainScene extends Phaser.Scene {
 
     this.timer = this.add
       .text(width, 0, '000.000')
+      .setFontFamily('HG行書体')
       .setBackgroundColor('pink')
       .setOrigin(1, 0)
       .setStroke('gray', 2)
